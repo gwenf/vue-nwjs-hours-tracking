@@ -1,95 +1,100 @@
-# nw-vue-cli-example
+# Hour Tracking App
 
-[![Build Status](https://travis-ci.org/nwutils/nw-vue-cli-example.svg?branch=master)](https://travis-ci.org/nwutils/nw-vue-cli-example)
+This app is to help you track your hours and generate invoices for clients as a freelancer or consultant.
 
-NW.js + Vue-CLI 4 example
+**Table of Contents**
 
-![A screenshot of the default app running on Windows](screenshot.png)
+1. Requirements
+1. Tech Stack
+1. Schema
+1. Mockups
+1. Design
+1. Roadmap
 
-* NW.js 0.47.0
-  * Chrome 84
-  * Node 14.5.0
-* Vue-CLI 4.4.6
-* Vue 2.6.11
-* Vue-DevTools (latest)
-* Babel
-* ESLint
-  * Vue Linting
-  * A11Y Linting
-  * Jest Linting
-* Jest (100% test coverage)
-* Jest Serializer Vue (TJW)
+## Requirements
 
-*Why not include Vue-Router or Vuex?*
+* Users can keep track of the hours they work
+* Users can select which project (client) they are working on
+* Users can see a log of entries when they start the timer and stop the timer (manual entry for MVP)
+* Users can set their hourly rate and business info in settings
+* Users can generate an invoice for each client
+* Users can see an overview of how much time they spent on each project over the last week/month/year
 
-Those are both very easily added from the Vue-CLI. There is also no custom styling libraries (Bulma, Bootstrap, etc), or meta-languages (Sass, TS, Pug, etc), or component libraries (Vuetify, Inkline, etc). This repo is meant to be the "go to" option for building all desktop apps with Vue. So it avoids pushing any particular choices on to you. With the exception of testing being set up for Jest, and Linting being set up to ensure minumum quality of this boilerplate repo itself. Both of which can be easily modified, ignored, or removed.
+## Tech Stack
 
+* Vue.js
+* NW.js (desktop application framework for Node.js)
+* Database (haven't chosen one yet)
+* Bootstrap
 
-## Running Locally for development
+## Schema
 
-1. `npm install`
-1. `npm start`
-1. Once Webpack finishes starting up your app will appear in a window
+### User
 
+*This app assumes there is only one user for each install. user information is used for generating client invoices.*
 
-## Building for distribution
+* firstName
+* lastName
+* streetAddress
+* streetAddress2
+* city
+* state
+* zip
+* country
+* phone
+* email
+* billingDetails? -> this needs to be more thought out
 
-1. `npm run build:clean` will delete your `./dist` and `./dist-vue` folders
-1. `npm run build:vue` will build just your Vue app for distribution (`./dist-vue`)
-1. `npm run build:nw` will build just your NW.js app (`./dist`)
-1. `npm run build` is your all-in-one command. It will clean out the old dist folders and build your Vue and NW.js app
+### TimeEntry
 
+* start: timestamp
+* stop: timestamp
+* notes: textfield
+* project: FK
 
-# **IMPORTANT NOTE ABOUT BUILDS!!!**
+### Project
 
-They take a long time. If you do `npm run build` expect it to take 10-30 minutes. This can be adjusted by changing the build params in the `package.json`. The more platforms and build types, the longer it takes. You can also remove the `--concurrent` from the `build:nw` script to see a status of what has been completed. This will allow individual pieces to finish faster, but the entire build will take longer.
+* name: charfield
+* description: textfield
+* color: charfield
+* createdAt: timestamp
+* updatedAt: timestamp
 
+### Log
 
-## Automated quality enforcment
+* text: textfield
+* createdAt: timestamp
+* updatedAt: timestamp
+* project: FK
 
-1. **Linting:** `npm run lint` - Uses rules in `./eslint.json`
-1. **Unit tests:** `npm run test:unit` - [Jest](https://jestjs.io).
-1. **End-to-end:** `npm run test:e2e` - Accepting PR to make tests run in NW.js. - [Nightwatch](https://nightwatchjs.org).
+## Mockups
 
+## Design
 
-### Customize configuration
+### Colors
 
-Want Vue-Router? Vuex? Use the Vue-CLI to add them:
+$dark-blue: #0D3B66
 
-* [Vue-CLI documentation](https://cli.vuejs.org/config).
+$off-white: #FAF0CA
 
+$yellow: #F4D35E
 
-* * *
+$orange: #EE964B
 
+$peach: #F95738
 
-## Updating Vue-DevTools
+## Roadmap
 
-To update your version of Vue-DevTools run `npm run update:vue-devtools`.
+### MVP
 
-This will download the source code for the latest version of Vue-DevTools and do a custom build for NW.js. This ensures you always have the latest version.
+* Hours log table
+* Add new hours entries
+* Create new projects (to associate hours with)
+* Settings
 
+### Version 1
 
-* * *
-
-
-## Alternatives
-
-* [nwjs-vue](https://github.com/elegantweb/nwjs-vue) - Uses Vue-CLI 2
-* [vue-desktop-basic](https://github.com/TheJaredWilcurt/vue-desktop-basic) - Does not use a build system at all, all `.vue` files run directly in the browser context
-
-
-* * *
-
-
-## Maintainence of this repo
-
-This is not for those *using* this repo, but for those *maintaining* it.
-
-1. When updating the version of NW.js devDependency, also update these:
-   * `package.json` devDeps, build nwVersion
-   * `tests/unit/setup.js`
-   * `tests/unit/components/__snapshots__/HelloWorld.test.js.snap`
-   * `.browserslistrc`
-1. Update the version numbers at the top of the README
-1. Bump the version number, and all the npm scripts that reference the version number
-1. Run `npm run regression` after updating dependencies or other major changes to verify builds still work correctly
+* Task tracking under projects
+* Exports
+* Billing Settings
+* Notifications
