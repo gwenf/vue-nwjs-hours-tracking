@@ -69,12 +69,12 @@ This app is to help you track your hours and generate invoices for clients as a 
 
 ## Mockups
 
-<img src="Hours Log.png">
-<img src="Drawer Menu.png">
-<img src="Projects Page.png">
-<img src="Project Page.png">
-<img src="Export Page.png">
-<img src="Settings.png">
+<img src="mockups/Hours Log.png">
+<img src="mockups/Drawer Menu.png">
+<img src="mockups/Projects Page.png">
+<img src="mockups/Project Page.png">
+<img src="mockups/Export Page.png">
+<img src="mockups/Settings.png">
 
 ## Design
 
