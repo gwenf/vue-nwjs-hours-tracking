@@ -4,12 +4,12 @@ This app is to help you track your hours and generate invoices for clients as a 
 
 **Table of Contents**
 
-1. Requirements
-1. Tech Stack
-1. Schema
-1. Mockups
-1. Design
-1. Roadmap
+1. [Requirements](#requirements)
+1. [Tech Stack](#tech-stack)
+1. [Schema](#schema)
+1. [Mockups](#mockups)
+1. [Design](#design)
+1. [Roadmap](#roadmap)
 
 ## Requirements
 
@@ -68,6 +68,13 @@ This app is to help you track your hours and generate invoices for clients as a 
 * project: FK
 
 ## Mockups
+
+<img src="Hours Log.png">
+<img src="Drawer Menu.png">
+<img src="Projects Page.png">
+<img src="Project Page.png">
+<img src="Export Page.png">
+<img src="Settings.png">
 
 ## Design
 
