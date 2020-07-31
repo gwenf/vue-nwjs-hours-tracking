@@ -22,7 +22,7 @@ export default new Vuex.Store({
         return entry.doc
       })
     },
-    setProjects(state, paylod) {
+    setProjects(state, payload) {
       state.projects = payload.map((entry) => {
         return entry.doc
       })
