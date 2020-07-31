@@ -3,6 +3,7 @@ import VueRouter from 'vue-router';
 import HoursLog from '../views/HoursLog.vue';
 import TimeEntry from '../views/TimeEntry.vue';
 import Projects from '../views/Projects.vue';
+import ProjectEntry from '../views/ProjectEntry.vue';
 
 Vue.use(VueRouter);
 
@@ -21,6 +22,11 @@ const routes = [
     path: '/projects',
     name: 'Projects',
     component: Projects
+  },
+  {
+    path: '/add-project',
+    name: 'ProjectEntry',
+    component: ProjectEntry
   },
 ];
 
