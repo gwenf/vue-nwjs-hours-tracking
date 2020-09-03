@@ -1,7 +1,7 @@
 <template>
   <b-container class="hours-log-page">
     <b-row>
-      <b-col sm="10" offsetSm="1">
+      <b-col>
         <b-row class="mt-5 mb-4">
           <b-col>
             <h1>Hours Log</h1>

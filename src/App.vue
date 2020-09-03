@@ -1,8 +1,8 @@
 <template>
   <div id="app">
     <b-navbar toggleable="lg" type="dark" variant="info">
-      <b-button class="mr-4" v-b-toggle.sidebar>Menu</b-button>
-      <b-navbar-brand href="#">NavBar</b-navbar-brand>
+      <b-button v-b-toggle.sidebar class="mr-4">Menu</b-button>
+      <b-navbar-brand href="#">Hours Tracking</b-navbar-brand>
     </b-navbar>
     <b-sidebar id="sidebar" title="Main Menu" shadow>
       <div class="px-3 py-2">
@@ -19,7 +19,7 @@
           <b-list-group-item href="/">
             Exports
           </b-list-group-item>
-          <b-list-group-item href="/">
+          <b-list-group-item href="/#/settings">
             Settings
           </b-list-group-item>
         </b-list-group>
