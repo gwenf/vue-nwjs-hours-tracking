@@ -32,8 +32,7 @@ module.exports = {
   ],
   rules: {
     'no-restricted-syntax': [
-      'error',
-      'Property[method="true"]'
+      'error'
     ],
     'vuejs-accessibility/label-has-for': [
       'error',

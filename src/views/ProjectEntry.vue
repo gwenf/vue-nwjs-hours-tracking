@@ -1,7 +1,7 @@
 <template>
   <b-container>
     <b-row>
-      <b-col sm="6" offset-sm="3">
+      <b-col sm="6" offsetSm="3">
         <b-row>
           <b-col>
             <h1>Project Entry</h1>
@@ -11,26 +11,26 @@
           <b-col>
             <b-form @submit="onSubmit" @reset="onReset">
 
-              <b-form-group id="input-group-1" label="Name:" label-for="input-1">
+              <b-form-group id="input-group-1" label="Name:" labelFor="input-1">
                 <b-form-input
-                  id="input-1"
                   v-model="formData.name"
+                  id="input-1"
                   required
                   placeholder="Name"
                 />
               </b-form-group>
 
-              <b-form-group id="input-group-2" label="Description:" label-for="input-2">
+              <b-form-group id="input-group-2" label="Description:" labelFor="input-2">
                 <b-form-textarea
-                  id="textarea"
                   v-model="formData.description"
+                  id="textarea"
                   placeholder="Enter a description..."
                   rows="3"
-                  max-rows="6"
+                  maxRows="6"
                 />
               </b-form-group>
 
-              <b-form-group id="input-group-2" label="Color:" label-for="input-2">
+              <b-form-group id="input-group-2" label="Color:" labelFor="input-2">
                 <input v-model="formData.color" type="color" />
               </b-form-group>
 
@@ -49,24 +49,24 @@ import { mapActions } from 'vuex';
 
 export default {
   name: 'ProjectEntry',
-  data() {
+  data () {
     return {
       formData: {
         name: '',
         description: '',
         color: ''
       }
-    }
+    };
   },
   methods: {
     ...mapActions(['createProject']),
-    onSubmit(e) {
-      e.preventDefault()
-      this.createProject(this.formData)
+    onSubmit (e) {
+      e.preventDefault();
+      this.createProject(this.formData);
     },
-    onReset() {
+    onReset () {
 
     }
   }
-}
+};
 </script>
