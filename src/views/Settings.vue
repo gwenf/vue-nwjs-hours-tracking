@@ -8,13 +8,13 @@
           </b-col>
           <b-col>
             <b-btn variant="primary" @click="$router.push({name: 'SettingsEdit'})">
-              Edit
+              {{ user ? 'Edit' : 'Create User' }}
             </b-btn>
           </b-col>
         </b-row>
       </b-col>
     </b-row>
-    <b-row class="mt-5 mb-4">
+    <b-row v-if="user" class="mt-5 mb-4">
       <b-col sm="8" offsetSm="2">
         <h2>Profile Information</h2>
         <p>First Name: firstName</p>
@@ -29,7 +29,7 @@
         <p>E-mail: email</p>
       </b-col>
     </b-row>
-    <b-row class="mt-5 mb-4">
+    <b-row v-if="user" class="mt-5 mb-4">
       <b-col sm="8" offsetSm="2">
         <h2>Billing Information</h2>
       </b-col>
@@ -38,11 +38,11 @@
 </template>
 
 <script>
+import { mapState } from 'vuex';
+
 export default {
-        
+  computed: {
+    ...mapState(['user'])
+  }
 };
 </script>
-
-<style lang="scss" scoped>
-
-</style>

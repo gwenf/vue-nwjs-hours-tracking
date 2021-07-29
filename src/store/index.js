@@ -30,6 +30,10 @@ db.setSchema([
     relations: {
       timeEntries: {hasMany: 'timeEntry'}
     }
+  },
+  {
+    singular: 'user',
+    plural: 'users'
   }
 ]);
 
@@ -38,7 +42,8 @@ Vue.use(Vuex);
 export default new Vuex.Store({
   state: {
     timeEntries: [],
-    projects: []
+    projects: [],
+    user: null
   },
   getters: {
     getProjects (state) {
@@ -56,6 +61,9 @@ export default new Vuex.Store({
     },
     setProjects (state, payload) {
       state.projects = payload
+    },
+    setUser (state, payload) {
+      state.user = payload
     }
   },
   actions: {
@@ -94,6 +102,18 @@ export default new Vuex.Store({
           ...payload
         })
         router.push({ name: 'Projects' });
+      } catch (err) {
+        console.error(err);
+      }
+    },
+    async createUser ({}, payload) {
+      try {
+        // const res = await projectsDB.put({ _id: uuidv4(), ...payload });
+        const res = await db.rel.save('user', {
+          ...payload
+        })
+        console.log('user created')
+        // router.push({ name: 'Projects' });
       } catch (err) {
         console.error(err);
       }
