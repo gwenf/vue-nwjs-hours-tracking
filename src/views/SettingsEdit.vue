@@ -11,14 +11,14 @@
           <b-form-group id="input-group-1" labelFor="input-1">
             <b-form-input
               v-model="firstName"
-              id="input-1"
+              id="first-name"
               required
               placeholder="First Name"
               class="my-3"
             />
             <b-form-input
               v-model="lastName"
-              id="input-2"
+              id="last-name"
               required
               placeholder="Last Name"
               class="my-3"
@@ -26,14 +26,14 @@
 
             <b-form-input
               v-model="email"
-              id="input-1"
+              id="email"
               required
               placeholder="E-mail"
               class="my-3"
             />
             <b-form-input
               v-model="phone"
-              id="input-2"
+              id="phone"
               required
               placeholder="Phone"
               class="my-3"
@@ -43,48 +43,47 @@
 
             <b-form-input
               v-model="address.street1"
-              id="input-1"
+              id="address-1"
               required
               placeholder="Street Address"
               class="my-3"
             />
             <b-form-input
               v-model="address.street2"
-              id="input-2"
-              required
+              id="address-2"
               placeholder="Street Address, Line 2 (Optional)"
               class="my-3"
             />
             <b-form-input
               v-model="address.city"
-              id="input-1"
+              id="city"
               required
               placeholder="City"
               class="my-3"
             />
             <b-form-input
               v-model="address.state"
-              id="input-2"
+              id="state"
               required
               placeholder="State"
               class="my-3"
             />
             <b-form-input
               v-model="address.zip"
-              id="input-1"
+              id="zip"
               required
               placeholder="Zip"
               class="my-3"
             />
             <b-form-input
               v-model="address.country"
-              id="input-2"
+              id="country"
               required
               placeholder="Country"
               class="my-3"
             />
           </b-form-group>
-          <b-btn variant="primary">
+          <b-btn type="submit" variant="primary">
             Save
           </b-btn>
         </b-form>

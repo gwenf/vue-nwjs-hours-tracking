@@ -106,14 +106,18 @@ export default new Vuex.Store({
         console.error(err);
       }
     },
-    async createUser ({}, payload) {
+    async createUser ({ commit }, payload) {
       try {
         // const res = await projectsDB.put({ _id: uuidv4(), ...payload });
         const res = await db.rel.save('user', {
           ...payload
         })
-        console.log('user created')
-        // router.push({ name: 'Projects' });
+        console.log('user created', res)
+        commit('setUser', {
+          ...payload,
+          id: res.id,
+        })
+        router.push({ name: 'Settings' });
       } catch (err) {
         console.error(err);
       }
